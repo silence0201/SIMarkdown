@@ -9,6 +9,7 @@
 #import "NetViewController.h"
 #import "SIMarkdownView.h"
 #import <WebKit/WebKit.h>
+#import <SafariServices/SafariServices.h>
 
 @interface NetViewController ()
 
@@ -24,6 +25,19 @@
     markdownView.showsScrollIndicator = NO ;
     markdownView.renderedAction = ^(CGFloat height) {
         NSLog(@"Height:%lf",height) ;
+    } ;
+    markdownView.linkTouchAction = ^BOOL(NSURLRequest *request) {
+        NSURL *url = request.URL ;
+        if (url) {
+            if ([url.scheme isEqualToString:@"file"]) {
+                return true ;
+            }else if ([url.scheme isEqualToString:@"https"] || [url.scheme isEqualToString:@"http"]) {
+                SFSafariViewController *sfvc = [[SFSafariViewController alloc]initWithURL:url] ;
+                [self.navigationController pushViewController:sfvc animated:YES] ;
+                return false ;
+            }
+        }
+        return false ;
     } ;
     self.automaticallyAdjustsScrollViewInsets = NO ;
     [self.view addSubview:markdownView] ;
