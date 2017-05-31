@@ -11,7 +11,7 @@
 
 或者使用`Pod`安装
 
-	pod 'SIMarkdown', '~> 1.0.0'	
+	pod 'SIMarkdown', '~> 1.0'	
 	
 ### 使用
 1. 导入头文件
