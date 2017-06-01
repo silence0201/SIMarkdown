@@ -16,7 +16,7 @@ typedef void(^SISuccessBlock)(SIMarkdownView *markView,NSData *data);
 
 @interface SIMarkdownView : UIView
 
-/// 用来解析的WebView
+/// 用来解析的WebView,必须先调用loadMarkdown方法初始化
 @property (nonatomic,strong,readonly) WKWebView *webView ;
 
 /// 是否开启滑动

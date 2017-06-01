@@ -12,7 +12,14 @@
 @interface SIMarkdownView ()<WKNavigationDelegate>
 @end
 
-@implementation SIMarkdownView
+@implementation SIMarkdownView{
+    WKWebView *_webView ;
+}
+
+- (WKWebView *)webView {
+    NSAssert(_webView, @"请先通过loadMarkdownXXX方法初始化") ;
+    return _webView ;
+}
 
 - (void)setScrollEnabled:(BOOL)scrollEnabled {
     _scrollEnabled = scrollEnabled ;
