@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SIMarkdown"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Markdown View implement with Objective-C"
   s.homepage     = "https://github.com/silence0201/SIMarkdown"
   s.license      = { :type => "MIT", :file => "LICENSE" }
