@@ -13,11 +13,11 @@
 @end
 
 @implementation SIMarkdownView{
-    WKWebView *_webView ;
+    WKWebView *_webView ;   // 用于渲染的WebView
 }
 
 - (WKWebView *)webView {
-    NSAssert(_webView, @"请先通过loadMarkdownXXX方法初始化") ;
+    NSAssert(_webView, @"请先通过loadMarkdownXXX方法初始化") ;  // 为空断言
     return _webView ;
 }
 
@@ -35,7 +35,7 @@
     }
 }
 
-- (void)loadMarkdownURL:(NSURL *)url withSuccess:(SISuccessBlock)block{
+- (void)loadMarkdownWithURL:(NSURL *)url withSuccess:(SISuccessBlock)block{
     if ([url.scheme isEqualToString:@"file"]) {
         NSString *markdown = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil] ;
         [self loadMarkdownString:markdown] ;

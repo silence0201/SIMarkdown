@@ -41,7 +41,7 @@
     } ;
     self.automaticallyAdjustsScrollViewInsets = NO ;
     [self.view addSubview:markdownView] ;
-    [markdownView loadMarkdownURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/matteocrippa/awesome-swift/master/README.md"]withSuccess:^(SIMarkdownView *markView, NSData *data) {
+    [markdownView loadMarkdownWithURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/matteocrippa/awesome-swift/master/README.md"]withSuccess:^(SIMarkdownView *markView, NSData *data) {
         markdownView.webView.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0) ;
         NSString *markdown = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] ;
         NSLog(@"%@",markdown) ;

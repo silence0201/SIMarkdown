@@ -44,6 +44,6 @@ typedef void(^SISuccessBlock)(SIMarkdownView *markView,NSData *data);
  @param url markdown资源URL地址
  @param block 加载成功后回调
  */
-- (void)loadMarkdownURL:(NSURL *)url withSuccess:(SISuccessBlock)block;
+- (void)loadMarkdownWithURL:(NSURL *)url withSuccess:(SISuccessBlock)block;
 
 @end
