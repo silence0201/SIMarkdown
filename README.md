@@ -63,12 +63,19 @@
 5. 加载网络markdown资源
 
 	```objective-c
-    [markdownView loadMarkdownURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/matteocrippa/awesome-swift/master/README.md"]withSuccess:^(SIMarkdownView *markView, NSData *data) {
+    [markdownView loadMarkdownWithURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/matteocrippa/awesome-swift/master/README.md"]withSuccess:^(SIMarkdownView *markView, NSData *data) {
         markdownView.webView.scrollView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0) ;
         NSString *markdown = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] ;
         NSLog(@"%@",markdown) ;
     }];
 	```
+6. 自定义显示的WebView,必须在加载网络资源之后调用
+
+
+	```objective-c
+	markdownView.webView.UIDelegate = self ;
+	```
+
 	
 ### 要求
 iOS 8 or later.

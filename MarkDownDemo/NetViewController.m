@@ -46,6 +46,8 @@
         NSString *markdown = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] ;
         NSLog(@"%@",markdown) ;
     }];
+    
+    markdownView.webView.UIDelegate = self ;
 }
 
 @end
