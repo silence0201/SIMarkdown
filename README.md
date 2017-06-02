@@ -28,7 +28,7 @@
     markdownView.showsScrollIndicator = NO ;  // 是否显示滑动指示器
 	```
 	
-3. 根绝需求设置回调
+3. 根据需求设置回调
 
 	```objective-c
     markdownView.renderedAction = ^(CGFloat height) {
